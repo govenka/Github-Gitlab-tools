@@ -1,0 +1,28 @@
+# Define environment variables for all jobs
+variables:
+  VARIABLE_NAME: value
+
+# Define the stages of the pipeline
+stages:
+  - build
+  - test
+  - deploy
+
+# Define the jobs in the pipeline
+build_job:
+  stage: build
+  image: ubuntu:20.04
+  script:
+    - make build
+
+test_job:
+  stage: test
+  image: ubuntu:20.04
+  script:
+    - make test
+
+deploy_job:
+  stage: deploy
+  image: ubuntu:20.04
+  script:
+    - make deploy
